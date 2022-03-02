@@ -32,7 +32,10 @@ def index():
         except:
             return "There is an issue"
     else:
-        tasks=Todo.query.order_by(Todo.date_created).all()
+        try:
+            tasks=Todo.query.order_by(Todo.date_created).all()
+        except:
+            tasks=None
         return render_template('index.html',tasks=tasks)
 
 @app.route('/delete/<int:id>')
