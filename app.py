@@ -63,31 +63,31 @@ def update(id):
 
 
 
-class Hello(Resource):
+# class Hello(Resource):
   
-    # corresponds to the GET request.
-    # this function is called whenever there
-    # is a GET request for this resource
-    def get(self):
+#     # corresponds to the GET request.
+#     # this function is called whenever there
+#     # is a GET request for this resource
+#     def get(self):
   
-        return jsonify({'message': 'hello world'})
+#         return jsonify({'message': 'hello world'})
   
-    # Corresponds to POST request
-    def post(self):
+#     # Corresponds to POST request
+#     def post(self):
           
-        data = request.get_json()     # status code
-        return jsonify({'data': data}), 201
+#         data = request.get_json()     # status code
+#         return jsonify({'data': data}), 201
   
   
-# another resource to calculate the square of a number
-class Square(Resource):
+# # another resource to calculate the square of a number
+# class Square(Resource):
   
-    def get(self, num):
+#     def get(self, num):
 
-        return jsonify({'square': num**2})
+#         return jsonify({'square': num**2})
   
-api.add_resource(Hello, '/')
-api.add_resource(Square, '/square/<int:num>')
+# api.add_resource(Hello, '/')
+# api.add_resource(Square, '/square/<int:num>')
   
 
 if __name__ == '__main__':
