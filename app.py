@@ -32,10 +32,7 @@ def index():
         except:
             return "There is an issue"
     else:
-        try:
-            tasks=Todo.query.order_by(Todo.date_created).all()
-        except:
-            tasks=None
+        tasks=Todo.query.order_by(Todo.date_created).all()
         return render_template('index.html',tasks=tasks)
 
 @app.route('/delete/<int:id>')
@@ -60,7 +57,7 @@ def update(id):
             return "There is an issue"
     else:
         return render_template('update.html',task=task_to_update)
-        
+
 class Hello(Resource):
   
     # corresponds to the GET request.
